@@ -1,0 +1,19 @@
+/*******************************
+BASIC STYLES
+********************************/
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 45pt;
+}
+
+h2 {
+  font-family: 'Hind', sans-serif;
+  font-size: 30pt;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: 'Hind', sans-serif;
+  font-size: 30pt;
+  font-weight: 700;
+}

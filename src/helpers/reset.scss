@@ -1,0 +1,35 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: tomato;
+}
+
+p {
+  @include fonts (body-text);
+}
+
+h2 {
+  @include fonts (heading);
+}
+
+.container-fluid,
+section.texture.col-md-7,
+section.shade.col-md-5 {
+  padding: 0;
+  margin: 0;
+}
+
+.centerme {
+  margin: auto;
+}
+
+.row-no-gutter{
+  margin-right: 0;
+  margin-left: 0;
+
+  [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
