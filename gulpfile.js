@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
+var compass = require('compass');
 
 
 gulp.task('sass', function () {
@@ -9,7 +10,8 @@ gulp.task('sass', function () {
     gulp.src('src/*.scss')
         // More info at: https://github.com/dlmanning/gulp-sass/tree/v2.1.1
         .pipe(
-            sass({ outputStyle:'expanded' })
+          sass({ outputStyle:'expanded',
+            includePaths: ['node_modules/foundation-sites/scss', "node_modules/foundation-sites/scss/settings"], })
               .on('error', sass.logError)
           )
         // More info at: https://github.com/postcss/autoprefixer/tree/6.3.1
@@ -37,3 +39,13 @@ gulp.task('default', [
     'sass:watch'
   ]);
 
+
+  // compiles in process.cwd()
+  compass.compile(function(err, stdout, stderr) {
+     console.log('done');
+  });
+
+  // compiles in the given directory
+  compass.compile({ cwd: __dirname + 'public' }, function(err, stdout, stderr) {
+     console.log('done');
+  });
